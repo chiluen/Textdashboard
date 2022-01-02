@@ -1,0 +1,21 @@
+{
+    "crawlnumber":30,
+    "displaynumber": 100, 
+    "barnumber":30,
+    "labeltable":{
+        "LABEL_0": "體育",
+        "LABEL_1": "社會",
+        "LABEL_10": "科技",
+        "LABEL_11": "社會",
+        "LABEL_12": "財經",
+        "LABEL_13": "家居",
+        "LABEL_2": "娛樂",
+        "LABEL_3": "教育",
+        "LABEL_4": "財經",
+        "LABEL_5": "社會",
+        "LABEL_6": "娛樂",
+        "LABEL_7": "家居",
+        "LABEL_8": "財經",
+        "LABEL_9": "娛樂"
+    }
+}

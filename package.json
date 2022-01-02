@@ -1,0 +1,11 @@
+{
+  "name": "Textdashboard",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "frontend": "cd ./frontend && yarn start",
+	"backend": "cd ./backend && gunicorn --bind=0.0.0.0:5000 --timeout 300 --workers 4 app:app",
+    "init-db":  "cd ./backend && python3 ./Initdb.py"
+  }
+}

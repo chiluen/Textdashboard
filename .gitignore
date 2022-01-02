@@ -1,0 +1,11 @@
+#前端資料
+node_modules/
+.DS_Store
+yarn-debug.log*
+yarn-error.log*
+
+#後端資料
+.env
+__pycache__/
+ChineseSequenceClassification/
+
