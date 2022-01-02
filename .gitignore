@@ -6,6 +6,7 @@ yarn-error.log*
 
 #後端資料
 .env
+.env.swp
 __pycache__/
 ChineseSequenceClassification/
 

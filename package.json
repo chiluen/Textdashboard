@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "frontend": "cd ./frontend && yarn start",
-	"backend": "cd ./backend && gunicorn --bind=0.0.0.0:5000 --timeout 300 --workers 4 app:app",
+	"backend": "cd ./backend && gunicorn --bind=0.0.0.0:5000 --timeout 300 --workers 1 app:app",
     "init-db":  "cd ./backend && python3 ./Initdb.py",
 	"install-all": "yarn install && cd ./frontend && yarn install",
 	"get-model": "git lfs install && git clone https://huggingface.co/LeoFeng/ChineseSequenceClassification && mv ChineseSequenceClassification ./backend/src"
