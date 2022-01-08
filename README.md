@@ -40,6 +40,8 @@ The current version takes the PTT Gossip  as an example. However, users can repl
 ## Prepare environment and MongoDB
 There are two way to prepare for this repo, however, **USE DOCKER METHOD IS STRONGLY RECOMMENDED**
 
+> After finish setting environment for dashboard, you have to apply for a mongodb account(For free). You can follow this <a href="https://docs.mongodb.com/guides/server/drivers/">Link</a> , you will get a string like "mongodb+srv://Chiluen:..."
+
 ### Use Docker :whale:
 Just pull image from docker hub
 ```
@@ -60,10 +62,7 @@ yarn get-model
 ```
 pip install git+https://github.com/huggingface/transformers
 ```
-<br>
-<font color=#FF6600>
-    After finish setting environment for dashboard, you have to apply for a mongodb account(For free). You can follow this <a href="https://docs.mongodb.com/guides/server/drivers/">Link</a> , you will get a string like "mongodb+srv://Chiluen:..."
-</font>
+
 
 <br>
 
