@@ -74,13 +74,13 @@ class Crawler():
                     pass
             #-----抓取每一個文章訊息-----#
             for i in range(len(page_href)):
-                data = self.getperpage(self.prefix + page_href[i])
                 try:
+                    data = self.getperpage(self.prefix + page_href[i]) #很少時候，PTT會出現一些bug
                     data['pushnum'] = int(page_pushnum[i])
                 except:
-                    data['pushnum'] = 100
+                    continue
                 self.data.append(data)
-                time.sleep(0.5)
+                time.sleep(0.2)
             print(f'Finish {len(self.data)} posts')
         print(f'Crawl {len(self.data)} posts')
         return self.data
