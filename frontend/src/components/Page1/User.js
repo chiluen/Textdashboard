@@ -7,8 +7,6 @@ import Userimage from '../img/User.png';
 import { getuserprofile } from '../../axios/Page_1_axios';
 import { NameContext } from '../../App';
 
-const Username = "Chiluen"
-
 const Usercard = ()=>{
     const [dataNum, setdataNum] = React.useState(0)
     const [latest, setlatest] = React.useState("0")

@@ -9,6 +9,7 @@ import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import Grid from '@mui/material/Grid';
 import { getpost } from '../../axios/Page_3_axios';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const columns = [
   { id: 'time', label: '時間', minWidth: 150 },
@@ -39,6 +40,7 @@ const Stickytable =(props) =>{
       rowdata.push( createData(i, data[i]["time"], data[i]["classification"],data[i]["author"], data[i]["title"], data[i]["content"]) )
     }
     setrows(rowdata) 
+    setfinish(true)
   },[])
   
 
@@ -51,59 +53,84 @@ const Stickytable =(props) =>{
     setPage(0);
   };
 
+  const table = ()=>{
+    return(
+      <Grid container rowSpacing={5} columnSpacing={{ xs: 30, sm: 30, md: 30 }} > 
+      <Grid item xs={12} >
+          <Paper sx={{ width: '100%', overflow: 'hidden' }}>
+          <TableContainer sx={{ maxHeight: 440 }}>
+              <Table stickyHeader aria-label="sticky table">
+              <TableHead>
+                  <TableRow>
+                  {columns.map((column) => (
+                      <TableCell
+                      key={column.id}
+                      align={column.align}
+                      style={{ minWidth: column.minWidth }}
+                      >
+                      {column.label}
+                      </TableCell>
+                  ))}
+                  </TableRow>
+              </TableHead>
+              <TableBody>
+                  {rows
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)   
+                  .map((row, index) => {
+                      return (
+                      <TableRow hover role="checkbox" tabIndex={-1} key={row.id} style={  (index%2) === 0 ? {backgroundColor:"#E8E8E4"}: {backgroundColor: "#FFD7BA"} }>
+                          {columns.map((column) => {
+                          const value = row[column.id];
+                          return (
+                              <TableCell key={column.id} align={column.align} style={{fontFamily: "Helvetica Neue"}} onClick={()=>{props.func(page, row)}}>
+                              {column.format && typeof value === 'number'
+                                  ? column.format(value)
+                                  : value}
+                              </TableCell>
+                          );
+                          })}
+                      </TableRow>
+                      );
+                  })}
+              </TableBody>
+              </Table>
+          </TableContainer>
+          <TablePagination
+              rowsPerPageOptions={[10, 25]}
+              component="div"
+              count={rows.length}
+              rowsPerPage={rowsPerPage}
+              page={page}
+              onPageChange={handleChangePage}
+              onRowsPerPageChange={handleChangeRowsPerPage}
+          />
+          </Paper>
+      </Grid>
+      </Grid>
+    )
+  }
+  const waitprogress = ()=>{
+    return(
+
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      style={{ minHeight: '100vh' }}
+    >
+      <Grid item xs={3}>
+      <CircularProgress size={200} />
+      </Grid>   
+    </Grid> 
+
+    )
+  }
+
   return (
-    <Grid container rowSpacing={5} columnSpacing={{ xs: 30, sm: 30, md: 30 }} > 
-        <Grid item xs={12} >
-            <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-            <TableContainer sx={{ maxHeight: 440 }}>
-                <Table stickyHeader aria-label="sticky table">
-                <TableHead>
-                    <TableRow>
-                    {columns.map((column) => (
-                        <TableCell
-                        key={column.id}
-                        align={column.align}
-                        style={{ minWidth: column.minWidth }}
-                        >
-                        {column.label}
-                        </TableCell>
-                    ))}
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {rows
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)   
-                    .map((row, index) => {
-                        return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={row.id} style={  (index%2) === 0 ? {backgroundColor:"#E8E8E4"}: {backgroundColor: "#FFD7BA"} }>
-                            {columns.map((column) => {
-                            const value = row[column.id];
-                            return (
-                                <TableCell key={column.id} align={column.align} style={{fontFamily: "Helvetica Neue"}} onClick={()=>{props.func(page, row)}}>
-                                {column.format && typeof value === 'number'
-                                    ? column.format(value)
-                                    : value}
-                                </TableCell>
-                            );
-                            })}
-                        </TableRow>
-                        );
-                    })}
-                </TableBody>
-                </Table>
-            </TableContainer>
-            <TablePagination
-                rowsPerPageOptions={[10, 25]}
-                component="div"
-                count={rows.length}
-                rowsPerPage={rowsPerPage}
-                page={page}
-                onPageChange={handleChangePage}
-                onRowsPerPageChange={handleChangeRowsPerPage}
-            />
-            </Paper>
-        </Grid>
-    </Grid>
+    <>
+      {finish?table():waitprogress()}
+    </>
   );
 }
 
