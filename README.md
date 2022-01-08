@@ -23,17 +23,17 @@ The current version takes the PTT Gossip  as an example. However, users can repl
 ## Main function
 1. In main page, you can see the statistical information about your database, included **Pie Chart**, **Bar Chart** and so on
 <div align="center">
-    <img src="./demo_image/page1.png" width="50%" height="auto"/> 
+    <img src="./demo_image/Page1.png" width="50%" height="auto"/> 
 </div>    
 2. In Crawl page, after you press the button, **the backend will start to crawl articles on PTT**, then backend will apply **Deep learning model on each articles to classify article topic**, then it will show **Worldcloud** to the user
 <div align="center">
-    <img src="./demo_image/page2-1.png" width="30%" height="auto"/> 
-    <img src="./demo_image/page2-2.png" width="30%" height="auto"/> 
+    <img src="./demo_image/Page2-1.png" width="30%" height="auto"/> 
+    <img src="./demo_image/Page2-2.png" width="30%" height="auto"/> 
 </div>
 3. In article page, you can see the latest articles in your database, **you can also click on the title to see the content in the article**
 <div align="center">
-    <img src="./demo_image/page3-1.png" width="30%" height="auto"/> 
-    <img src="./demo_image/page3-2.png" width="30%" height="auto"/> 
+    <img src="./demo_image/Page3-1.png" width="30%" height="auto"/> 
+    <img src="./demo_image/Page3-2.png" width="30%" height="auto"/> 
 </div>
 <br>
 
