@@ -48,7 +48,7 @@ Just pull image from docker hub
 docker pull feng545035/textdashboard:1.0.0
 ```
 ### Manually :house:
-Run the below script ( makesure you have python>=3.9.0 and yarn>=1.22.17 )
+Run the below script ( makesure you have python>=3.9.0 and yarn>=1.22.17 and node>=10.0.0, you also have to install [git-lfs](https://git-lfs.github.com/))
 ```
 git clone https://github.com/chiluen/Textdashboard.git
 cd ./Textdashboard
