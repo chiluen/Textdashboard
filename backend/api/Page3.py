@@ -19,8 +19,10 @@ def getdata():
     """
     得到Database裡面的推文資料
     """
+
+    data = Postinfo.objects
     try:
-        data = Postinfo.objects[:config["displaynumber"]] # a list of json
+        data = Postinfo.objects[len(data) - config["displaynumber"]:] # a list of json
     except:
         data = Postinfo.objects[:] 
 
