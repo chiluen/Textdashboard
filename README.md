@@ -8,7 +8,7 @@
 <div>
 
 ## Introduction
-This repo contains a dashboard which **user can monitor articles and trends on Internet.** Besides, this dashboard use **depp learning model to help user to automatically classify the articles into 7 categories.** Moreover, there are also web crawler that can **automatically crawl articles on the Internet.**
+This repo contains a dashboard which **user can monitor articles and trends on Internet.** Besides, this dashboard use **deep learning model to help user to automatically classify the articles into 7 categories.** Moreover, there are also web crawler that can **automatically crawl articles on the Internet.**
 <br>
 The current version takes the PTT Gossip  as an example. However, users can replace the web crawler by themselves to monitor the trend of a specific forum. :wink:
 
