@@ -87,9 +87,14 @@ url( You can refer to Prepare environment section )
 #In .env
 MONGO_URL=“mongodb+srv://Chiluen:...”
 ```
-6. Go to ```/Textdashboard``` in both frontend and backend
-7. Type ```yarn frontend``` in frontend window; type ```yarn backend``` in backend window
-8. After see "DB connected" in backend, then backend is on service, type ```http://localhost:3000``` in your browser, then you can use the dashboard!
+6. Init database by running below script in the same place
+```
+# at /Textdashboard/backend
+python3 Initdb.py
+```
+7. Go to ```/Textdashboard``` in both frontend and backend
+8. Type ```yarn frontend``` in frontend window; type ```yarn backend``` in backend window
+9. After see "DB connected" in backend, then backend is on service, type ```http://localhost:3000``` in your browser, then you can use the dashboard!
 
 
 ### For manually :house:
@@ -104,9 +109,14 @@ url( You can refer to Prepare environment section )
 #In .env
 MONGO_URL=“mongodb+srv://Chiluen:...”
 ```
-4. Go to ```/Textdashboard``` in both frontend and backend
-5. Type ```yarn frontend``` in frontend window; type ```yarn backend``` in backend window
-6. After see "DB connected" in backend, then backend is on service, type ```http://localhost:3000``` in your browser, then you can use the dashboard!
+4. Init database by running below script in the same place
+```
+# at ./Textdashboard/backend
+python3 Initdb.py
+```
+5. Go to ```/Textdashboard``` in both frontend and backend
+6. Type ```yarn frontend``` in frontend window; type ```yarn backend``` in backend window
+7. After see "DB connected" in backend, then backend is on service, type ```http://localhost:3000``` in your browser, then you can use the dashboard!
 
 <br>
 
